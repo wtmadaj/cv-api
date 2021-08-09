@@ -1,0 +1,61 @@
+openapi: 3.0.1
+info:
+  title: Api Documentation
+  description: Api Documentation
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+  version: "1.0"
+servers:
+  - url: //localhost:8080/
+tags:
+  - name: experience-controller
+    description: Experience Controller
+paths:
+  /experience/:
+    get:
+      tags:
+        - experience-controller
+      summary: getExperiences
+      operationId: getExperiencesUsingGET
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Experiences'
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+      deprecated: false
+components:
+  schemas:
+    Experience:
+      title: Experience
+      type: object
+      properties:
+        dates:
+          type: string
+        description:
+          type: string
+        employer:
+          type: string
+        position:
+          type: string
+    Experiences:
+      title: Experiences
+      type: object
+      properties:
+        experienceList:
+          type: array
+          items:
+            $ref: '#/components/schemas/Experience'

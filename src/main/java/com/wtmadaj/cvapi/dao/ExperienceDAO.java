@@ -14,8 +14,7 @@ public class ExperienceDAO {
                         "Software Engineer",
                         "JPMorgan Chase & Co",
                         "July 2018 - Present",
-                        "Led and always participated in all aspects of the Agile/Scrum software development life cycle - sprint planning, refinement, requirements gathering, retrospectives, etc." +
-                                 " Championed initiatives for large scale data center migration efforts."));
+                        "Description here"));
         list.getExperienceList().add(
                 new Experience(
                         "Software Engineer",
